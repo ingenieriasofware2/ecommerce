@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comercio electronico</title>
+</head>
+<body>
+
+    <h2>Inicio</h2>
+    <ul>
+        <li><a href={% url 'home' %}>Inicio</a></li>
+        <li><a href={% url 'products' %}>Productos</a></li>
+        <li><a href="">Ingresar</a></li>
+    </ul>
+
+    {% block content %}{% endblock%}
+</body>
+</html>
