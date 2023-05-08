@@ -4,22 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comercio electronico</title>
+    <title>Comercio electrónico</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para el menú */
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            color: #eee;
+            padding: 10px;
+        }
+
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li {
+            margin-right: 20px;
+        }
+
+        .menu a {
+            color: #eee;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Estilos para el footer */
+        .footer {
+            background-color: #22571C;
+            color: #eee;
+            text-align: center;
+            padding: 50px;
+            margin: 130px 0 0 0;
+        }
+
+        .footer p {
+            margin: 20px 0 0 0;
+            padding: 0;
+            font-size: 16px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 59vh; /* Ajusta la altura según tus necesidades */
+        }
+
+        
+    </style>
 </head>
 <body>
 
-    <h2>Inicio</h2>
-    <ul>
-        <li><a href={% url 'home' %}>Inicio</a></li>
-        <li><a href={% url 'products' %}>Productos</a></li>
+    <!-- Menú -->
+    <div class="menu">
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'products' %}">Productos</a></li>
+        </ul>
+        <ul>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'exit' %}">Cerrar sesión</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Ingresar</a></li>
+            {% endif %}
+        </ul>
+    </div>
 
-        {% if request.user.is_authenticated %}
-            <li><a href={% url 'exit' %}>Salir</a></li>
-        {% else %}
-            <li><a href={% url 'login' %}>Ingresar</a></li>
-        {% endif %}
-    </ul>
+    <!-- Contenido -->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
 
-    {% block content %}{% endblock%}
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2023 Comercio electrónico. Todos los derechos reservados.</p>
+    </div>
+
 </body>
 </html>
