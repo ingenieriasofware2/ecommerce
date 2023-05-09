@@ -2,10 +2,11 @@
 
 {% block content %}
 
-<h3>Inicio</h3>
+<h1>Inicio</h1>
 {% if request.user.is_authenticated %}
     <hr>
     <h4>
+        <br>
         {{ user.username | upper}}, bienvenido!
     </h4>
 {% endif %}

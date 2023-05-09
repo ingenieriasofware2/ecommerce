@@ -2,6 +2,35 @@
 
 {% block content %}
 
-<h3>Productos</h3>
+<div class="container">
+  <div class="search-bar">
+    <form>
+      <input type="text" placeholder="Buscar producto">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+  
+  <div class="products">
+    <div class="product-card">
+      <img src="producto1.jpg" alt="Producto 1">
+      <h4>Producto 1</h4>
+      <p>Descripción del producto 1</p>
+      <button>Añadir al carrito</button>
+    </div>
+    <div class="product-card">
+      <img src="producto2.jpg" alt="Producto 2">
+      <h4>Producto 2</h4>
+      <p>Descripción del producto 2</p>
+      <button>Añadir al carrito</button>
+    </div>
+    <div class="product-card">
+      <img src="producto3.jpg" alt="Producto 3">
+      <h4>Producto 3</h4>
+      <p>Descripción del producto 3</p>
+      <button>Añadir al carrito</button>
+    </div>
+    <!-- Agregar más productos aquí -->
+  </div>
+</div>
 
-{% endblock%}
+{% endblock %}
