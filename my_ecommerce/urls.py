@@ -1,4 +1,12 @@
 """
+Su función es definir las rutas de URL de la aplicación y especificar cómo se 
+relacionan con las vistas y funcionalidades correspondientes.
+
+El archivo urls.py en Django se considera una INTERFACE. Este archivo define 
+las rutas de URL y cómo se relacionan con las vistas correspondientes. 
+Proporciona una interfaz para mapear las URL de la aplicación a las 
+funcionalidades y vistas específicas que deben ejecutarse cuando se accede a esas URL.
+
 URL configuration for my_ecommerce project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:

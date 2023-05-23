@@ -2,14 +2,50 @@
 
 {% block content %}
 
-<h1>Inicio</h1>
-{% if request.user.is_authenticated %}
-    <hr>
-    <h4>
-        <br>
-        {{ user.username | upper}}, bienvenido!
-    </h4>
-{% endif %}
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Título de la página</title>
+  <!-- Aquí puedes incluir otros metadatos y enlaces a hojas de estilo -->
+  <style>
+    /* Estilos para el div de ofertas */
+    #ofertas {
+      border: 1px solid black;
+      height: 50%;
+      
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .producto {
+      /* Estilos para los productos */
+      width: 150px;
+      height: 200px;
+      margin: 10px;
+      border: 1px solid gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Aquí puedes incluir el mensaje de bienvenida -->
+    <h1>Inicio</h1>
+    {% if request.user.is_authenticated %}
+      <hr>
+      <h4>{{ user.username | upper }}, bienvenido!</h4>
+    {% endif %}
+  </header>
+  <main>
+    <!-- Aquí está el div de ofertas -->
+    <div id="ofertas">
+    
+    </div>
+  </main>
+</body>
+</html>
 
-
-{% endblock%}
+{% endblock %}
